@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %}{% endblock %} -  Ecom</title>
+</head>
+<body>
+    <nav class="px-6 py-2 flex justify-between items-center bg-gray-200 border-b border-gray-300">
+        <a href="{% url 'index' %}" class="text-2xl font-bold">Ecom</a>
+        <div class="flex items-center gap-4">
+             <a href="{% url 'contact' %}" class="text-2xl font-bold">New Item</a>
+             <a href="{% url 'contact' %}" class="text-2xl font-bold">Browse</a>
+             <a href="{% url 'contact' %}" class="text-2xl font-bold px-4 py-2 bg-purple-500">Register</a>
+             <a href="{% url 'contact' %}" class="text-2xl font-bold px-4 py-2 bg-lime-500">Login</a>
+        </div>
+    </nav>
+    <div class="px-6 py-6 min-h-screen">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="px-6 py-6 bg-gray-700 text-amber-300">
+        <div class="text-center">Ecom&copy;2024</div>
+    </footer>
+</body>
+</html>
