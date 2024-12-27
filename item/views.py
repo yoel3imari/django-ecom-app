@@ -1,9 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
-from item.models import Item, Category
+from item.models import Item
 # Create your views here.
-
-def index(request):
-    items = Item.objects.filter(is_sold=False)[0:6]
-    categories = Category.objects.all()
-    return render(request, 'core/index.html', {'items': items, 'categories': categories})
+def detail(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    return render(request, "item/detail.html", {"item": item})
